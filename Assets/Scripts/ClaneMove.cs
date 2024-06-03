@@ -23,12 +23,12 @@ public class ClaneMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = gameObject.transform.position;
+        Vector3 pos = transform.position;
         pos.x = getMousePosInWorld().x;
 
         if (pos.x <= leftMax) pos.x = leftMax;
         if (pos.x >= rightMax) pos.x = rightMax;
 
-        gameObject.transform.position = pos;
+        transform.position = pos;
     }
 }

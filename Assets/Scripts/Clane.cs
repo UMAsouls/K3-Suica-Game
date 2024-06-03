@@ -1,3 +1,5 @@
+using Cysharp.Threading.Tasks;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,23 +12,25 @@ public class Clane : MonoBehaviour
 
     [SerializeField] private float coolTime;
 
-    private GameObject catchedObj;
+    private ICatchable catchedObj;
 
     private int fruitIdx;
+
+    private bool isRelease;
 
     void CatchObj()
     {
         /// <summary>
         /// オブジェクトを出現、掴む
         /// </summary>
-        fruitIdx = Random.Range(0, fruits.Length);
+        fruitIdx = UnityEngine.Random.Range(0, fruits.Length);
 
         Vector2 pos = transform.position;
         Quaternion rot = Quaternion.identity;
-        catchedObj = Instantiate(fruits[fruitIdx], pos, rot);
+        var obj = Instantiate(fruits[fruitIdx], pos, rot);
 
-        var rigid = catchedObj.GetComponent<Rigidbody2D>();
-        rigid.isKinematic = true;
+        catchedObj = obj.GetComponent<ICatchable>();
+        catchedObj.Catched();
         
     }
 
@@ -35,26 +39,31 @@ public class Clane : MonoBehaviour
         /// <summary>
         /// オブジェクトを離す
         /// </summary>
-        Vector2 pos = transform.position;
-        Quaternion rot = Quaternion.identity;
-        var obj = Instantiate(fruits[fruitIdx], pos, rot);
-
-        catchedObj.SetActive(false);
-        Destroy(catchedObj, coolTime);
+        catchedObj.Released();
+        catchedObj = null;
+        isRelease = true;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        catchedObj = null;
+        CatchObj();
+        isRelease = false;
     }
 
     // Update is called once per frame
-    void Update()
+    async void Update()
     {
-        if(catchedObj == null) CatchObj();
-        catchedObj.transform.position = transform.position;
+        if(isRelease)
+        {
+            isRelease = false;
+            await UniTask.Delay(TimeSpan.FromSeconds(coolTime));
+            CatchObj();
+        }
 
-        if(Input.GetMouseButtonDown(0) && catchedObj.activeSelf) ReleseObj();
+        if (catchedObj == null) return;
+
+        catchedObj.setPos(transform.position);
+        if (Input.GetMouseButtonDown(0)) ReleseObj();
     }
 }

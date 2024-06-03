@@ -266,7 +266,7 @@ MonoBehaviour:
   - {fileID: 1538714247597846818, guid: 576be1ba50a2f574ea5bb31da4be00c8, type: 3}
   - {fileID: 298064654669182871, guid: efa8801f9954d3444810cfc939a8dbd0, type: 3}
   - {fileID: 4473400028778226650, guid: 28b682fcd700df841a9758d52bd9facc, type: 3}
-  coolTime: 1
+  coolTime: 0.5
 --- !u!114 &1479714989
 MonoBehaviour:
   m_ObjectHideFlags: 0
