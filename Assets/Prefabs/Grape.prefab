@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5696268446579316539}
   - component: {fileID: 6034562710888744980}
   - component: {fileID: 2165485805850231714}
+  - component: {fileID: 2834207035177261792}
   m_Layer: 0
   m_Name: Grape
   m_TagString: Fruit
@@ -74,8 +75,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162ad8fa5ce53cc4fa95d6c7f664f2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2834207035177261792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538714247597846818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0602bb0ad77e13409848906b569a03a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   type: grape
-  score: 400
+  score: 0
   nextFruit: {fileID: 298064654669182871, guid: efa8801f9954d3444810cfc939a8dbd0, type: 3}
 --- !u!1 &4925745148219265437
 GameObject:

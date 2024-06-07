@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 3305267010074537238}
   - component: {fileID: 7416966320467546590}
   - component: {fileID: 2054482953301236749}
+  - component: {fileID: 4482616081077057860}
   m_Layer: 0
   m_Name: Kaki
   m_TagString: Fruit
@@ -220,6 +221,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 162ad8fa5ce53cc4fa95d6c7f664f2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4482616081077057860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4473400028778226650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0602bb0ad77e13409848906b569a03a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: kaki

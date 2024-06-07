@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 7722643125194238976}
   - component: {fileID: 3516679993275849091}
   - component: {fileID: 6405474358864661614}
+  - component: {fileID: 295815872870171486}
   m_Layer: 0
   m_Name: Strawberry
   m_TagString: Fruit
@@ -289,6 +290,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162ad8fa5ce53cc4fa95d6c7f664f2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &295815872870171486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8104148615966123337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0602bb0ad77e13409848906b569a03a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   type: strawberry
-  score: 200
+  score: 0
   nextFruit: {fileID: 1538714247597846818, guid: 576be1ba50a2f574ea5bb31da4be00c8, type: 3}
